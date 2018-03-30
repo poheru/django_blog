@@ -1,4 +1,4 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url
 
 urlpatterns = [
     url(r'^login/$', 'loginsys.views.login'),
