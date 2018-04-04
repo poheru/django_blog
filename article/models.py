@@ -12,8 +12,12 @@ class Article(models.Model):
     article_text = models.TextField(max_length=10000, verbose_name='Текст статьи')
     article_date = models.DateTimeField(verbose_name='Дата создания')
     article_likes = models.IntegerField(default=0)
-    article_first_chr = lambda self: self.article_title.split()[0][0]
+    article_first_chr = lambda self: self.article_title
     article_first_chr.short_description = 'А-Я'
+
+    def allObjects(self):
+        queryset = self.objects.all()
+        return queryset
 
 class Comments(models.Model):
     class Meta():

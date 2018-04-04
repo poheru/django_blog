@@ -44,12 +44,13 @@ INSTALLED_APPS = (
 SOUTH_DATABASE_ADAPTERS = {
 'default': 'south.db.mysql'}
 
-MIDDLEWARE_CLASSES = (
+#Name of tuple has been changed from MIDDLEWARE_CLASSES to MIDDLEWARE
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware', #showld to check for why it has used in previous versions
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -61,9 +62,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'C:/Django_code/myounenv/mysite/templates',
-            'C:/Django_code/myounenv/mysite/article/templates',
-            'C:/Django_code/myounenv/mysite/loginsys/templates',
+            'C:/projects/django_blog/templates',
+            'C:/projects/django_blog/article/templates',
+            'C:/projects/django_blog/loginsys/templates',
                 ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -111,5 +112,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    ('static', 'C:/Django_code/myounenv/mysite/static'),
+    ('static', 'C:/projects/django_blog/static'),
 )

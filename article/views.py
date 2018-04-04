@@ -6,7 +6,7 @@ from django.shortcuts import render_to_response, redirect
 from article.models import Article, Comments
 from django.core.exceptions import ObjectDoesNotExist
 from article.forms import CommentForm
-from django.core.context_processors import csrf
+from django.views.decorators import csrf
 from django.contrib import auth
 from django.core.paginator import Paginator
 
